@@ -1,24 +1,28 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import Home from "./Pages/Home/Home.jsx";
+import NotFound from "./Pages/NotFound/NotFound.jsx";
+import Success from "./Pages/Success/Success.jsx";
+import Chatbot from "./components/Chatbox.jsx";
+import "./App.css";
 
-import React from 'react'
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
-import Home from './Pages/Home/Home.jsx';
-import NotFound from './Pages/NotFound/NotFound.jsx';
-import Success from './Pages/Success/Success.jsx';
-import './App.css'
 const App = () => {
   return (
     <>
       <Router>
         <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/success' element={<Success/>}/>
-          <Route path='*' element={<NotFound/>}/>
+          <Route path='/' element={<Home />} />
+          <Route path='/success' element={<Success />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
-        <Toaster/>
+
+        <Chatbot />
+
+        <Toaster />
       </Router>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

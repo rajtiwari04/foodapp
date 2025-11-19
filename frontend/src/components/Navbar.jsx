@@ -22,7 +22,18 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          <button className="menuBtn">OUR  MENU</button>
+          <button
+  className="menuBtn"
+  onClick={() => {
+    const section = document.getElementById("menu");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+>
+  OUR MENU
+</button>
+
         </div>
         <div className="hamburger" onClick={()=> setShow(!show)}>
                 <GiHamburgerMenu/>

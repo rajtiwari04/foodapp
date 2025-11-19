@@ -1,9 +1,14 @@
-
 import React from "react";
-import { Link } from "react-router-dom";
 import { HiOutlineArrowRight } from "react-icons/hi";
 
 const About = () => {
+  const handleExploreClick = () => {
+    const menuSection = document.getElementById("menu");
+    if (menuSection) {
+      menuSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <section className="about" id="about">
@@ -15,18 +20,21 @@ const About = () => {
             </div>
             <p className="mid">
               Our restaurant brings together flavors from around the world,
-               offering an unforgettable multicuisine dining experience.
-                From aromatic Indian curries to classic Italian pastas, vibrant Asian stir-fries,
-                 and rich continental delicacies, every dish is crafted with passion. We focus on fresh ingredients, 
-                 authentic recipes, warm hospitality,
-                  and an inviting atmosphere where every guest enjoys exceptional taste, comfort, and satisfaction.
+              offering an unforgettable multicuisine dining experience.
+              From aromatic Indian curries to classic Italian pastas, vibrant Asian stir-fries,
+              and rich continental delicacies, every dish is crafted with passion. We focus on fresh ingredients,
+              authentic recipes, warm hospitality, and an inviting atmosphere where every guest enjoys
+              exceptional taste, comfort, and satisfaction.
             </p>
-            <Link to={"/"}>
+            <button
+              className="explore-menu-btn"
+              onClick={handleExploreClick}
+            >
               Explore Menu{" "}
               <span>
                 <HiOutlineArrowRight />
               </span>
-            </Link>
+            </button>
           </div>
           <div className="banner">
             <img src="about.png" alt="about" />
